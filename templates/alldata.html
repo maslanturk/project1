@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Başlık</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Kh</th>
+            <th scope="col">Alkalinity</th>
+            <th scope="col">Ca</th>
+            <th scope="col">Mg</th>
+            <th scope="col">Fosfat</th>
+            <th scope="col">NO3</th>
+            <th scope="col">PH</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for veri in veri %} 
+                <tr>   
+                    <td><a href="datas/{{veri.ID}}">{{veri.Baslik}}</a></td>
+                    <td>{{veri.Kullanici}}</td>
+                    <td>{{veri.Tarih}}</td>
+                    <td>{{veri.Kh}}</td>
+                    <td>{{veri.Alkalinity}}</td>
+                    <td>{{veri.Ca}}</td>
+                    <td>{{veri.Mg}}</td>
+                    <td>{{veri.Fosfat}}</td>
+                    <td>{{veri.NO3}}</td>
+                    <td>{{veri.PH}}</td>
+                </tr> 
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/graphic" class="btn btn-primary">Grafikte Göster</a>
+{% endblock body %}
